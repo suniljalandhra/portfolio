@@ -11,6 +11,11 @@ export const metadata: Metadata = {
   description:
     "Backend and blockchain engineer: event-driven systems, Solana programs, cross-chain bridges and zero-knowledge infrastructure.",
   metadataBase: new URL("https://suniljalandhra.com"),
+  icons: {
+    icon: [{ url: "/favicon-96x96.png", sizes: "96x96", type: "image/png" }],
+    apple: "/apple-touch-icon.png",
+  },
+  manifest: "/site.webmanifest",
   openGraph: {
     title: "Sunil Jalandhra | Backend & Blockchain Engineer",
     description: "Event-driven backends, Solana programs, cross-chain bridges and ZK systems.",
