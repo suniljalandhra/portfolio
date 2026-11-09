@@ -41,6 +41,9 @@ export const tracks = [
 export type Job = {
   role: string;
   company: string;
+  mark: string;
+  hue: number;
+  summary: string;
   place: string;
   period: string;
   points: string[];
@@ -50,6 +53,9 @@ export const experience: Job[] = [
   {
     role: "Senior Solana Engineer",
     company: "D3 Inc",
+    mark: "D3",
+    hue: 260,
+    summary: "Built the real-time Solana indexing backend and wrote Rust/Anchor staking programs with LayerZero V2 cross-chain messaging.",
     place: "Remote",
     period: "Aug 2025 – Sep 2026",
     points: [
@@ -64,6 +70,9 @@ export const experience: Job[] = [
   {
     role: "Engineering Manager (hands-on)",
     company: "Aerius Labs",
+    mark: "AL",
+    hue: 160,
+    summary: "Led a small team shipping ZK proof infrastructure, a verifiable order book and multi-sig bridges across TON, Ethereum and Solana.",
     place: "Gurgaon, India",
     period: "Dec 2022 – Jul 2025",
     points: [
@@ -77,6 +86,9 @@ export const experience: Job[] = [
   {
     role: "Software Engineer",
     company: "Electron Labs",
+    mark: "EL",
+    hue: 25,
+    summary: "Built a NEAR–Cosmos token bridge in Go and wrote Ed25519 verification circuits in Circom.",
     place: "New Delhi, India",
     period: "May 2021 – Nov 2022",
     points: [
