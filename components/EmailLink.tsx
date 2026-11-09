@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import { MailIcon } from "@/components/icons";
+import { EnvelopeSimple } from "@phosphor-icons/react";
 
 const SUBJECT = "Hello Sunil, from your portfolio";
 const BODY = `Hi Sunil,
@@ -56,7 +56,7 @@ export default function EmailLink({ email, label, className }: { email: string; 
   return (
     <span className="email-wrap">
       <a href={mailto} onClick={onClick} className={className}>
-        <MailIcon /> {label ?? email}
+        <EnvelopeSimple size={18} weight="duotone" /> {label ?? email}
       </a>
       {fallback && (
         <span className="email-fallback" role="status">

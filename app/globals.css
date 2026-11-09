@@ -125,6 +125,7 @@ a:focus-visible, button:focus-visible, summary:focus-visible { outline: 2px soli
 .socials { display: flex; flex-wrap: wrap; gap: 8px 22px; margin-top: 26px; }
 .socials a { display: inline-flex; align-items: center; gap: 7px; font-size: 0.88rem; color: var(--text); transition: color .15s; }
 .socials a:hover { color: var(--accent); }
+.socials svg { color: var(--accent); }
 .hero-art { display: flex; justify-content: center; }
 
 /* Merkle illustration */
@@ -178,13 +179,14 @@ a:focus-visible, button:focus-visible, summary:focus-visible { outline: 2px soli
 }
 .job h3 { font-size: 1rem; font-weight: 700; }
 .job-role { color: var(--ink); font-size: 0.9rem; }
-.job-date { margin-top: 4px; font-family: var(--font-mono); font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.06em; color: var(--muted); }
+.job-date { display: flex; flex-wrap: wrap; gap: 4px 14px; margin-top: 4px; font-family: var(--font-mono); font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.06em; color: var(--muted); }
 .job-summary { margin-top: 12px; font-size: 0.9rem; }
 details { margin-top: 10px; }
 summary { cursor: pointer; font-size: 0.82rem; color: var(--accent); width: fit-content; list-style: none; }
 summary::-webkit-details-marker { display: none; }
-summary::after { content: " +"; }
-details[open] summary::after { content: " −"; }
+summary { display: inline-flex; align-items: center; gap: 4px; }
+summary .caret { transition: transform .2s; }
+details[open] summary .caret { transform: rotate(180deg); }
 details ul { margin-top: 10px; display: flex; flex-direction: column; gap: 8px; }
 details li { position: relative; padding-left: 16px; font-size: 0.86rem; color: var(--muted); }
 details li::before { content: ""; position: absolute; left: 2px; top: 0.7em; width: 5px; height: 5px; border-radius: 1px; background: var(--accent); }
@@ -213,7 +215,9 @@ details li::before { content: ""; position: absolute; left: 2px; top: 0.7em; wid
 /* Skills */
 .skills { border-top: 1px solid var(--line); }
 .skill-row { display: grid; grid-template-columns: 180px 1fr; gap: 20px; padding: 14px 0; border-bottom: 1px solid var(--line); align-items: start; }
-.skill-row dt { font-size: 0.88rem; font-weight: 500; color: var(--ink); padding-top: 2px; }
+.skill-row dt { display: flex; align-items: center; gap: 8px; font-size: 0.88rem; font-weight: 500; color: var(--ink); padding-top: 2px; }
+.skill-row dt svg { color: var(--accent); flex: none; }
+.job-date span { display: inline-flex; align-items: center; gap: 5px; }
 .edu { font-size: 0.9rem; }
 
 /* Contact */

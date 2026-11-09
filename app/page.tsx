@@ -3,7 +3,23 @@ import { getContributions } from "@/lib/github";
 import ContributionGraph from "@/components/ContributionGraph";
 import ThemeToggle from "@/components/ThemeToggle";
 import MerkleArt from "@/components/MerkleArt";
-import { GitHubIcon, LinkedInIcon, ArrowIcon } from "@/components/icons";
+import {
+  GithubLogo,
+  LinkedinLogo,
+  ArrowUpRight,
+  MapPin,
+  CalendarBlank,
+  CaretDown,
+  Code,
+  Database,
+  Cube,
+  ShareNetwork,
+  TreeStructure,
+  TestTube,
+  GraduationCap,
+
+} from "@phosphor-icons/react/dist/ssr";
+import type { Icon } from "@phosphor-icons/react";
 import EmailLink from "@/components/EmailLink";
 import TypedWord from "@/components/TypedWord";
 
@@ -12,9 +28,18 @@ export const revalidate = 86400;
 const typedWords = ["indexers", "bridges", "ZK systems", "Kafka pipelines", "Solana programs"];
 
 const socials = [
-  { label: "GitHub", href: profile.github, Icon: GitHubIcon },
-  { label: "LinkedIn", href: profile.linkedin, Icon: LinkedInIcon },
+  { label: "GitHub", href: profile.github, Icon: GithubLogo },
+  { label: "LinkedIn", href: profile.linkedin, Icon: LinkedinLogo },
 ];
+
+const skillIcons: Record<string, Icon> = {
+  Languages: Code,
+  Backend: Database,
+  Solana: Cube,
+  "Protocols & ZK": ShareNetwork,
+  Architecture: TreeStructure,
+  "Testing & DevOps": TestTube,
+};
 
 export default async function Home() {
   const contributions = await getContributions();
@@ -52,7 +77,7 @@ export default async function Home() {
               {socials.map(({ label, href, Icon }) => (
                 <li key={label}>
                   <a href={href} target={href.startsWith("http") ? "_blank" : undefined} rel="noreferrer">
-                    <Icon /> {label}
+                    <Icon size={18} weight="duotone" /> {label}
                   </a>
                 </li>
               ))}
@@ -85,12 +110,12 @@ export default async function Home() {
                   <h3>{job.company}</h3>
                   <p className="job-role">{job.role}</p>
                   <p className="job-date">
-                    {job.period}
-                    <span className="job-loc"> · {job.place}</span>
+                    <span><CalendarBlank size={13} weight="bold" /> {job.period}</span>
+                    <span><MapPin size={13} weight="bold" /> {job.place}</span>
                   </p>
                   <p className="job-summary">{job.summary}</p>
                   <details>
-                    <summary>Highlights</summary>
+                    <summary>Highlights <CaretDown size={12} weight="bold" className="caret" /></summary>
                     <ul>
                       {job.points.map((pt) => <li key={pt}>{pt}</li>)}
                     </ul>
@@ -110,7 +135,7 @@ export default async function Home() {
                   <p className="kicker">{p.kicker}</p>
                   <h3>
                     {p.title}
-                    {p.href && <span className="arrow"><ArrowIcon /></span>}
+                    {p.href && <span className="arrow"><ArrowUpRight size={16} weight="bold" /></span>}
                   </h3>
                   <p className="project-body">{p.body}</p>
                   <ul className="tags">
@@ -130,18 +155,21 @@ export default async function Home() {
         <section id="skills" className="block">
           <h2>Skills</h2>
           <dl className="skills">
-            {skills.map((s) => (
+            {skills.map((s) => {
+              const SkillIcon = skillIcons[s.group] ?? Code;
+              return (
               <div key={s.group} className="skill-row">
-                <dt>{s.group}</dt>
+                <dt><SkillIcon size={18} weight="duotone" /> {s.group}</dt>
                 <dd>
                   <ul className="tags">
                     {s.items.map((it) => <li key={it}>{it}</li>)}
                   </ul>
                 </dd>
               </div>
-            ))}
+              );
+            })}
             <div className="skill-row">
-              <dt>Education</dt>
+              <dt><GraduationCap size={18} weight="duotone" /> Education</dt>
               <dd className="edu">
                 {education.degree}, {education.school} <span className="muted">· {education.period}</span>
               </dd>
