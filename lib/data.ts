@@ -88,6 +88,13 @@ export const experience: Job[] = [
 
 export const projects = [
   {
+    kicker: "Side project · ZK",
+    title: "zkCert: private course certificates",
+    body: "Proves \"I completed course X\" on Coursera or Udemy by verifying the platform's DKIM-signed completion email inside the SP1 zkVM. The email, name and address stay private; proofs verify in the browser via WASM or mint an EAS attestation on-chain.",
+    stack: ["SP1", "Rust", "DKIM / RSA", "WASM", "Groth16", "EAS"],
+    href: "https://github.com/suniljalandhra/zkcert-sp1",
+  },
+  {
     kicker: "D3 Inc · 2025–26",
     title: "Solana token indexer",
     body: "Real-time pipeline turning on-chain activity into queryable data, built to survive replays, backfills and load spikes.",

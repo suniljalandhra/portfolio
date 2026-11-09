@@ -124,6 +124,8 @@ h3 { font-size: 1.1rem; font-weight: 600; line-height: 1.35; }
 .track p { color: var(--muted); font-size: 0.95rem; flex: 1; }
 
 .projects { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
+.projects > :first-child { grid-column: 1 / -1; }
+.projects > :first-child p:not(.kicker):not(.stack) { max-width: 70ch; }
 .project {
   display: flex; flex-direction: column; gap: 10px; padding: 28px;
   border: 1px solid var(--line); border-radius: 14px; text-decoration: none;
