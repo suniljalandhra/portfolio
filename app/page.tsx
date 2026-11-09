@@ -5,8 +5,11 @@ import ThemeToggle from "@/components/ThemeToggle";
 import MerkleArt from "@/components/MerkleArt";
 import { GitHubIcon, LinkedInIcon, ArrowIcon } from "@/components/icons";
 import EmailLink from "@/components/EmailLink";
+import TypedWord from "@/components/TypedWord";
 
 export const revalidate = 86400;
+
+const typedWords = ["indexers", "bridges", "ZK systems", "Kafka pipelines", "Solana programs"];
 
 const socials = [
   { label: "GitHub", href: profile.github, Icon: GitHubIcon },
@@ -35,7 +38,11 @@ export default async function Home() {
         <section className="hero">
           <div className="hero-text">
             <p className="status"><span className="pulse" aria-hidden /> {profile.availability}</p>
-            <h1>Backend &amp; blockchain engineer building indexers, bridges and ZK systems</h1>
+            <h1>
+              <span className="sr-only">Backend &amp; blockchain engineer building indexers, bridges and ZK systems</span>
+              <span aria-hidden>Backend &amp; blockchain engineer building </span>
+              <TypedWord words={typedWords} />
+            </h1>
             <p className="intro">
               I&apos;m Sunil Jalandhra, a backend engineer from New Delhi with 5+ years across Solana, EVM, Cosmos,
               NEAR and TON. I build event-driven pipelines in TypeScript, and reach for Rust and Go when the

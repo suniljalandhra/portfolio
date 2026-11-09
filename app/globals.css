@@ -1,63 +1,72 @@
 :root {
-  --bg: #f4f4f3;
-  --surface: #fbfbfa;
-  --surface-2: #ececea;
-  --ink: #18181b;
-  --text: #3f3f46;
-  --muted: #71717a;
-  --line: #e2e2df;
-  --accent: #16a34a;
-  --accent-soft: #dcfce7;
-  --c0: #e4e4e1;
-  --c1: #a7e3b7;
-  --c2: #5fcb7f;
-  --c3: #2ea957;
-  --c4: #18743a;
+  --bg: #f6f8fb;
+  --surface: #ffffff;
+  --surface-2: #eef2f7;
+  --ink: #0f172a;
+  --text: #334155;
+  --muted: #64748b;
+  --line: #e2e8f0;
+  --accent: #0d9488;
+  --accent-ink: #ffffff;
+  --accent-soft: #ccfbf1;
+  --glow: rgba(29, 78, 216, 0.06);
+  --c0: #e2e8f0;
+  --c1: #99f6e4;
+  --c2: #2dd4bf;
+  --c3: #0d9488;
+  --c4: #115e59;
   --max: 1000px;
   color-scheme: light;
 }
 
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme="light"]) {
-    --bg: #0e0f10;
-    --surface: #151618;
-    --surface-2: #1c1d20;
-    --ink: #f4f4f5;
-    --text: #c4c4cc;
-    --muted: #8b8b94;
-    --line: #26272b;
-    --accent: #3ddc76;
-    --accent-soft: #0f2a1a;
-    --c0: #1d1f22;
-    --c1: #0e4429;
-    --c2: #006d32;
-    --c3: #26a641;
-    --c4: #39d353;
+    --bg: #0f172a;
+    --surface: #131d33;
+    --surface-2: #1e293b;
+    --ink: #e2e8f0;
+    --text: #94a3b8;
+    --muted: #64748b;
+    --line: #1f2b40;
+    --accent: #5eead4;
+    --accent-ink: #0f172a;
+    --accent-soft: rgba(45, 212, 191, 0.1);
+    --glow: rgba(29, 78, 216, 0.15);
+    --c0: #1e293b;
+    --c1: #134e4a;
+    --c2: #0f766e;
+    --c3: #14b8a6;
+    --c4: #5eead4;
     color-scheme: dark;
   }
 }
 :root[data-theme="dark"] {
-  --bg: #0e0f10;
-  --surface: #151618;
-  --surface-2: #1c1d20;
-  --ink: #f4f4f5;
-  --text: #c4c4cc;
-  --muted: #8b8b94;
-  --line: #26272b;
-  --accent: #3ddc76;
-  --accent-soft: #0f2a1a;
-  --c0: #1d1f22;
-  --c1: #0e4429;
-  --c2: #006d32;
-  --c3: #26a641;
-  --c4: #39d353;
+  --bg: #0f172a;
+  --surface: #131d33;
+  --surface-2: #1e293b;
+  --ink: #e2e8f0;
+  --text: #94a3b8;
+  --muted: #64748b;
+  --line: #1f2b40;
+  --accent: #5eead4;
+  --accent-ink: #0f172a;
+  --accent-soft: rgba(45, 212, 191, 0.1);
+  --glow: rgba(29, 78, 216, 0.15);
+  --c0: #1e293b;
+  --c1: #134e4a;
+  --c2: #0f766e;
+  --c3: #14b8a6;
+  --c4: #5eead4;
   color-scheme: dark;
 }
 
 * { box-sizing: border-box; margin: 0; padding: 0; }
 html { scroll-behavior: smooth; scroll-padding-top: 72px; }
 body {
-  background: var(--bg);
+  background:
+    radial-gradient(900px 600px at 0% 0%, var(--glow), transparent 70%),
+    var(--bg);
+  background-attachment: fixed;
   color: var(--text);
   font-family: var(--font-sans), system-ui, sans-serif;
   font-size: 15px;
@@ -68,7 +77,7 @@ body {
 a { color: inherit; text-decoration: none; }
 ul, ol { list-style: none; }
 h1, h2, h3 { color: var(--ink); font-family: var(--font-display), sans-serif; }
-::selection { background: var(--accent); color: #fff; }
+::selection { background: var(--accent); color: var(--accent-ink); }
 a:focus-visible, button:focus-visible, summary:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 4px; }
 .muted { color: var(--muted); }
 .container { max-width: var(--max); margin: 0 auto; padding: 0 24px; }
@@ -155,7 +164,7 @@ a:focus-visible, button:focus-visible, summary:focus-visible { outline: 2px soli
   border: 1px solid var(--line); background: var(--surface); color: var(--text); white-space: nowrap;
 }
 .graph-years button:hover { background: var(--surface-2); }
-.graph-years button.active { background: var(--accent); border-color: var(--accent); color: #fff; }
+.graph-years button.active { background: var(--accent); border-color: var(--accent); color: var(--accent-ink); font-weight: 500; }
 
 /* Experience */
 .jobs { display: grid; grid-template-columns: repeat(2, 1fr); gap: 40px 48px; }
@@ -197,8 +206,8 @@ details li::before { content: ""; position: absolute; left: 2px; top: 0.7em; wid
 
 .tags { display: flex; flex-wrap: wrap; gap: 6px; }
 .tags li {
-  font-family: var(--font-mono); font-size: 0.7rem; padding: 3px 9px; border-radius: 6px;
-  background: var(--surface-2); color: var(--text);
+  font-family: var(--font-mono); font-size: 0.7rem; padding: 3px 10px; border-radius: 999px;
+  background: var(--accent-soft); color: var(--accent);
 }
 
 /* Skills */
@@ -254,3 +263,22 @@ details li::before { content: ""; position: absolute; left: 2px; top: 0.7em; wid
 .email-fallback .close { text-decoration: none; color: var(--muted); font-size: 1rem; line-height: 1; margin-left: 4px; }
 .contact .email-wrap { margin-top: 24px; }
 .contact .email-wrap .btn { margin-top: 0; }
+
+/* Typed headline word */
+.sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0; }
+.typed { display: inline-grid; vertical-align: bottom; white-space: nowrap; }
+.typed > * { grid-area: 1 / 1; }
+.typed-ghost { visibility: hidden; }
+.typed-live { color: var(--accent); }
+.typed-cursor {
+  display: inline-block; width: 3px; height: 0.9em; margin-left: 3px; vertical-align: -0.08em;
+  background: var(--accent); border-radius: 1px; animation: blink 1s steps(1) infinite;
+}
+@keyframes blink { 50% { opacity: 0; } }
+@media (prefers-reduced-motion: reduce) { .typed-cursor { animation: none; } }
+
+/* Brighter company tiles on navy */
+:root[data-theme="dark"] .job-logo { color: hsl(var(--hue) 75% 70%); }
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) .job-logo { color: hsl(var(--hue) 75% 70%); }
+}
