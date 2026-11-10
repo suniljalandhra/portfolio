@@ -7,7 +7,7 @@ export const profile = {
   linkedin: "https://linkedin.com/in/sunil-jalandhra",
   github: "https://github.com/suniljalandhra",
   summary:
-    "5+ years building event-driven backends, on-chain programs and zero-knowledge infrastructure. I work mostly in TypeScript (NestJS), with Rust and Go where they fit, across Solana, EVM, Cosmos, NEAR and TON.",
+    "5+ years building event-driven backends, on-chain programs and zero-knowledge infrastructure. I work in Rust for on-chain programs, ZK and services, and TypeScript (NestJS) and Go for event-driven backends, across Solana, EVM, Cosmos, NEAR and TON.",
 };
 
 export const stats = [
@@ -134,7 +134,7 @@ export const projects = [
 ];
 
 export const skills: { group: string; items: string[] }[] = [
-  { group: "Languages", items: ["TypeScript", "Rust", "Go", "Solidity", "Circom", "SQL"] },
+  { group: "Languages", items: ["Rust", "TypeScript", "Go", "Solidity", "Circom", "SQL"] },
   { group: "Backend", items: ["NestJS", "Node.js", "PostgreSQL", "TypeORM", "Kafka", "Redis", "GraphQL", "Actix Web"] },
   { group: "Solana", items: ["Anchor", "Solana Kit", "Codama", "Token-2022", "MPL Core", "PDAs", "ALTs"] },
   { group: "Protocols & ZK", items: ["LayerZero V2", "Cosmos SDK", "IBC", "NEAR", "TON", "Substrate", "SP1"] },

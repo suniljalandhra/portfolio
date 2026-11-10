@@ -9,7 +9,7 @@ const mono = Geist_Mono({ subsets: ["latin"], variable: "--font-mono" });
 export const metadata: Metadata = {
   title: "Sunil Jalandhra | Backend & Blockchain Engineer",
   description:
-    "Backend and blockchain engineer: event-driven systems, Solana programs, cross-chain bridges and zero-knowledge infrastructure.",
+    "Backend and blockchain engineer working in Rust and TypeScript: Solana programs, ZK systems, cross-chain bridges and event-driven backends.",
   metadataBase: new URL("https://suniljalandhra.com"),
   icons: {
     icon: [{ url: "/favicon-96x96.png", sizes: "96x96", type: "image/png" }],

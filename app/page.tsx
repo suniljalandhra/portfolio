@@ -22,10 +22,11 @@ import {
 import type { Icon } from "@phosphor-icons/react";
 import EmailLink from "@/components/EmailLink";
 import TypedWord from "@/components/TypedWord";
+import ConsoleFerris from "@/components/ConsoleFerris";
 
 export const revalidate = 86400;
 
-const typedWords = ["indexers", "bridges", "ZK systems", "Kafka pipelines", "Solana programs"];
+const typedWords = ["indexers", "Rust services", "bridges", "ZK systems", "Solana programs", "Kafka pipelines"];
 
 const socials = [
   { label: "GitHub", href: profile.github, Icon: GithubLogo },
@@ -46,6 +47,7 @@ export default async function Home() {
 
   return (
     <>
+      <ConsoleFerris email={profile.email} />
       <header className="nav">
         <div className="nav-inner">
           <a href="#top" className="logo" aria-label="Home">SJ</a>
@@ -64,14 +66,14 @@ export default async function Home() {
           <div className="hero-text">
             <p className="status"><span className="pulse" aria-hidden /> {profile.availability}</p>
             <h1>
-              <span className="sr-only">Backend &amp; blockchain engineer building indexers, bridges and ZK systems</span>
+              <span className="sr-only">Backend &amp; blockchain engineer building indexers, Rust services, bridges and ZK systems</span>
               <span aria-hidden>Backend &amp; blockchain engineer building </span>
               <TypedWord words={typedWords} />
             </h1>
             <p className="intro">
               I&apos;m Sunil Jalandhra, a backend engineer from New Delhi with 5+ years across Solana, EVM, Cosmos,
-              NEAR and TON. I build event-driven pipelines in TypeScript, and reach for Rust and Go when the
-              problem calls for it.
+              NEAR and TON. I write Rust for Solana programs, ZK provers and backend services, and TypeScript
+              and Go for the event-driven pipelines around them.
             </p>
             <ul className="socials">
               {socials.map(({ label, href, Icon }) => (
