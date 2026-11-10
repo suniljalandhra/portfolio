@@ -1,6 +1,9 @@
 import type { Metadata } from "next";
 import { Space_Grotesk, Geist, Geist_Mono } from "next/font/google";
+import "@astryxdesign/core/reset.css";
+import "@astryxdesign/core/astryx.css";
 import "./globals.css";
+import AppTheme from "@/components/AppTheme";
 
 const display = Space_Grotesk({ subsets: ["latin"], weight: ["500", "700"], variable: "--font-display" });
 const sans = Geist({ subsets: ["latin"], variable: "--font-sans" });
@@ -32,7 +35,9 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
       <head>
         <script dangerouslySetInnerHTML={{ __html: themeScript }} />
       </head>
-      <body>{children}</body>
+      <body>
+        <AppTheme>{children}</AppTheme>
+      </body>
     </html>
   );
 }

@@ -9,12 +9,17 @@
     "lint": "eslint"
   },
   "dependencies": {
+    "@astryxdesign/core": "^0.7.11",
+    "@astryxdesign/theme-gothic": "^0.7.11",
+    "@astryxdesign/theme-neutral": "^0.7.11",
     "@phosphor-icons/react": "^2.1.10",
+    "@stylexjs/stylex": "^0.19.1",
     "next": "^15.5.29",
     "react": "19.1.0",
     "react-dom": "19.1.0"
   },
   "devDependencies": {
+    "@astryxdesign/cli": "^0.7.11",
     "@eslint/eslintrc": "^3",
     "@types/node": "^20",
     "@types/react": "^19",
