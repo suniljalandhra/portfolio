@@ -43,6 +43,9 @@ export type Job = {
   company: string;
   mark: string;
   hue: number;
+  /** Logo in /public (white mark, shown on a dark tile). */
+  logo?: string;
+  url?: string;
   summary: string;
   place: string;
   period: string;
@@ -55,6 +58,8 @@ export const experience: Job[] = [
     company: "D3 Inc",
     mark: "D3",
     hue: 260,
+    logo: "/logos/d3.svg",
+    url: "https://d3.com/",
     summary: "Built the real-time Solana indexing backend and wrote Rust/Anchor staking programs with LayerZero V2 cross-chain messaging.",
     place: "Remote",
     period: "Aug 2025 – Sep 2026",
@@ -72,6 +77,8 @@ export const experience: Job[] = [
     company: "Aerius Labs",
     mark: "AL",
     hue: 160,
+    logo: "/logos/aerius.png",
+    url: "https://aeriuslabs.org/",
     summary: "Led a small team shipping ZK proof infrastructure, a verifiable order book and multi-sig bridges across TON, Ethereum and Solana.",
     place: "Gurgaon, India",
     period: "Dec 2022 – Jul 2025",

@@ -105,11 +105,24 @@ export default async function Home() {
           <div className="jobs">
             {experience.map((job) => (
               <article key={job.company} className="job">
-                <div className="job-logo" style={{ ["--hue" as string]: job.hue }} aria-hidden>
-                  {job.mark}
-                </div>
+                {(() => {
+                  const tile = (
+                    <div className={`job-logo${job.logo ? " has-img" : ""}`} style={{ ["--hue" as string]: job.hue }} aria-hidden>
+                      {job.logo ? <img src={job.logo} alt="" width={28} height={28} /> : job.mark}
+                    </div>
+                  );
+                  return job.url ? (
+                    <a href={job.url} target="_blank" rel="noreferrer" tabIndex={-1} aria-hidden className="job-logo-link">{tile}</a>
+                  ) : tile;
+                })()}
                 <div className="job-body">
-                  <h3>{job.company}</h3>
+                  <h3>
+                    {job.url ? (
+                      <a href={job.url} target="_blank" rel="noreferrer" className="job-company">
+                        {job.company} <ArrowUpRight size={13} weight="bold" />
+                      </a>
+                    ) : job.company}
+                  </h3>
                   <p className="job-role">{job.role}</p>
                   <p className="job-date">
                     <span><CalendarBlank size={13} weight="bold" /> {job.period}</span>
